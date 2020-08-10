@@ -21,11 +21,10 @@ public class App
     }
     
     static List<List<Integer>> partition(List<Integer> li,int taille){
-    	List<List<Integer>> pat=new ArrayList<>();
-    	final AtomicInteger conteur = new AtomicInteger();
+    	final AtomicInteger compteur = new AtomicInteger();
 
     	final Collection<List<Integer>> result = li.stream()
-    	    .collect(Collectors.groupingBy(el -> conteur.getAndIncrement() / taille))
+    	    .collect(Collectors.groupingBy(el -> compteur.getAndIncrement() / taille))
     	    .values();
 
     	return new ArrayList<List<Integer>>( result);
